@@ -26,6 +26,9 @@ GEM
     jmespath (1.6.2)
     logger (1.7.0)
     mustermann (3.1.1)
+    nio4r (2.7.5)
+    puma (6.6.1)
+      nio4r (~> 2.0)
     rack (2.2.23)
     rack-cors (2.0.2)
       rack (>= 2.0.0)
@@ -45,6 +48,7 @@ PLATFORMS
 DEPENDENCIES
   aws-sdk-s3 (~> 1.227)
   dotenv (~> 2.8)
+  puma
   rack-cors (~> 2.0)
   sinatra (~> 3.2)
 
