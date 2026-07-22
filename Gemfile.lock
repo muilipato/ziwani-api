@@ -35,6 +35,7 @@ GEM
     rack-protection (3.2.0)
       base64 (>= 0.1.0)
       rack (~> 2.2, >= 2.2.4)
+    rexml (3.4.4)
     sinatra (3.2.0)
       mustermann (~> 3.0)
       rack (~> 2.2, >= 2.2.4)
@@ -50,6 +51,7 @@ DEPENDENCIES
   dotenv (~> 2.8)
   puma
   rack-cors (~> 2.0)
+  rexml
   sinatra (~> 3.2)
 
 BUNDLED WITH
