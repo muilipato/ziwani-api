@@ -42,3 +42,27 @@ get "/gallery" do #returns available albums
   albums.to_json
 
 end
+
+get "/gallery/:album" do #returns images according to albums
+  album = params[:album]
+
+  result = s3.list_objects_v2(
+    bucket: BUCKET,
+    prefix: "#{album}/"
+  )
+
+  images = result.contents
+  .reject { |obj| obj.key.end_with?("/") }  
+  .map do |obj|
+    {
+      name: File.basename(obj.key),
+      key: obj.key,
+      size: obj.size,
+      last_modified: obj.last_modified,
+      url: "https://#{BUCKET}.s3.amazonaws.com/#{obj.key}"
+    }
+  end
+
+  content_type :json
+  images.to_json
+end
