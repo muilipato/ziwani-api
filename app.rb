@@ -65,4 +65,8 @@ get "/gallery/:album" do #returns images according to albums
 
   content_type :json
   images.to_json
+
 end
+
+set :bind, "0.0.0.0"
+set :port, ENV.fetch("PORT", 8080)
